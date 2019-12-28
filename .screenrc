@@ -1,0 +1,20 @@
+# Set terminal
+term rxvt-unicode-256color
+
+# Disable startup message
+startup_message off
+
+# Set status bar
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= dG}[ %{G}%H %{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+
+# Clear screen after exiting vim
+altscreen on
+
+# Open default programs
+screen -t "BASH" 1 bash
+screen -t "VIM" 2 bash
+screen -t "MAN" 3 bash
+
+select 1
