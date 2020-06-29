@@ -16,7 +16,7 @@ startup_message off
 # Set status bar
 hardstatus off
 hardstatus alwayslastline
-hardstatus string '%{= dG}[ %{d}%H %{b}| %{G}%101`%{d}%{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{d} Vol: %102` %{b}| %{d}Load: %l %{b}| %{d}%103`%{d}%D %M-%d %{d}%{b}| %{W}%C%a %{g}]'
+hardstatus string '%{= dG}[ %{d}%H %{b}| %{G}%101`%{d}%{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{d} Vol: %102` %{b}| %{d}%103`%{d}%D %M-%d %{d}%{b}| %{W}%C%a %{g}]'
 
 # Clear screen after exiting vim
 altscreen on
@@ -27,21 +27,21 @@ mousetrack on
 
 # Open default programs
 screen -t "IRC" 0 ssh irc
-screen -t "BASH" 1
-screen -t "BASH" 2
+screen -t "BASH" 1 bash
+screen -t "BASH" 2 bash
 
 # Shell window group
+screen -t "NEWS" 7 newsboat
 screen -t "SHELL" 8 //group
 select 8
-screen -t "BASH" 10
-screen -t "BASH" 11
+screen -t "BASH" 10 bash
+screen -t "BASH" 11 bash
 select 0
 
 # Monitoring window group
 screen -t "MON" 9 //group
 select 9
 screen -t "HTOP" 20 htop
-screen -t "GLANCES" 21 glances
 screen -t "DMESG" 21 bash
 
 # Default to window 1
