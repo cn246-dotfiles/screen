@@ -25,6 +25,12 @@ altscreen on
 defmousetrack on
 mousetrack on
 
+# Set bar color for splits
+rendition so wk
+
+# Caption text. Highlight current window's status on split.
+caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
+
 # Open default programs
 screen -t "IRC" 0 ssh irc
 screen -t "BASH" 1 bash
