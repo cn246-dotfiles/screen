@@ -32,49 +32,72 @@ rendition so wk
 caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
 
 # Open default programs
-screen -t "IRC" 0 ssh irc
-screen -t "BASH" 1 bash
-screen -t "BASH" 2 bash
+screen -t "IRC"     0 ssh irc
+screen -t "BASH"    1 bash
+screen -t "BASH"    2 bash
 
 # Shell window group
-screen -t "NEWS" 7 newsboat
-screen -t "SHELL" 8 //group
+screen -t "NEWS"    7 newsboat
+screen -t "DEV"     8 //group
 select 8
-screen -t "BASH" 10 bash
-screen -t "BASH" 11 bash
+screen -t "GIT"     10 bash
+screen -t "VIM"     11 bash
+screen -t "DJANGO"  12 bash
+screen -t "RUNNER"  13 bash
+screen -t "SQL"     14 bash
+screen -t "PYTHON"  15 python3
 select 0
 
 # Monitoring window group
-screen -t "MON" 9 //group
+screen -t "MON"     9 //group
 select 9
-screen -t "HTOP" 20 htop
-screen -t "DMESG" 21 bash
+screen -t "HTOP"    20 htop
+screen -t "DMESG"   21 bash
 
 # Default to window 1
 select 1
 
-# layouts
-#layout autosave on
-#layout new one
-#select 1
-#layout new two
-#select 1
-#split
-#resize -v +8
-#focus down
-#select 0
-#focus up
-#layout new three
-#select 21
-#split
-#resize -v +7
-#focus down
-#select 20
-#split -v
-#resize -h +10
-#focus right
-#select 1
-#focus up
-#
-#layout attach one
-#layout select one
+# Layouts
+layout new main
+select 1
+layout autosave on
+
+layout new django
+select 10
+split -v
+split -v
+resize -10%
+focus right
+select 11
+resize +5%
+focus right
+select 12
+split
+focus down
+select 13
+focus left
+
+layout new sql
+select 14
+split
+focus down
+select 15
+focus up
+
+layout attach main
+layout select main
+
+# Cycle through windows
+# Ctrl-a [h,j,k,l,t,b]
+bind h focus left
+bind j focus next
+bind k focus prev
+bind l focus right
+
+# Cycle through layouts
+# Ctrl-j j
+bind -c layoutN j layout next
+bindkey "^J" command -c layoutN
+# Ctrl-k k
+bind -c layoutP k layout prev
+bindkey "^K" command -c layoutP
