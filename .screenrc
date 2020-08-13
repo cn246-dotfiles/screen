@@ -77,12 +77,20 @@ focus down
 select 13
 focus left
 
-layout new sql
+layout new vsplit
 select 14
 split
 focus down
 select 15
 focus up
+
+layout new hsplit
+select 1
+split -v
+focus right
+resize -10%
+select 2
+focus left
 
 layout attach main
 layout select main
