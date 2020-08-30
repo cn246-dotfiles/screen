@@ -35,6 +35,8 @@ caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
 screen -t "IRC"     0 ssh irc
 screen -t "BASH"    1 bash
 screen -t "BASH"    2 bash
+screen -t "DDS"     3 bash
+screen -t "DDS"     4 bash
 
 # Shell window group
 screen -t "NEWS"    7 newsboat
@@ -42,9 +44,9 @@ screen -t "DEV"     8 //group
 select 8
 screen -t "GIT"     10 bash
 screen -t "VIM"     11 bash
-screen -t "DJANGO"  12 bash
-screen -t "RUNNER"  13 bash
-screen -t "SQL"     14 bash
+screen -t "BASH"    12 bash
+screen -t "BASH"    13 bash
+screen -t "BASH"    14 bash
 screen -t "PYTHON"  15 python3
 select 0
 
@@ -62,7 +64,7 @@ layout new main
 select 1
 layout autosave on
 
-layout new django
+layout new multi
 select 10
 split -v
 split -v
@@ -77,12 +79,12 @@ focus down
 select 13
 focus left
 
-layout new vsplit
-select 14
-split
-focus down
-select 15
-focus up
+#layout new vsplit
+#select 14
+#split
+#focus down
+#select 15
+#focus up
 
 layout new hsplit
 select 1
