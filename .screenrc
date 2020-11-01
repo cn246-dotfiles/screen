@@ -1,22 +1,53 @@
+# ------------------------------------------------------------------------------
+# SCREEN SETTINGS
+# ------------------------------------------------------------------------------
+
+startup_message off
+#nethack on
+
+#defflow on # will force screen to process ^S/^Q
+deflogin on
+#autodetach off
+
+# turn visual bell on
+vbell on
+vbell_msg "   Wuff  ----  Wuff!!  "
+
+# define a bigger scrollback, default is 100 lines
+defscrollback 1024
+
+# ------------------------------------------------------------------------------
+# TERMINAL SETTINGS
+# ------------------------------------------------------------------------------
+
+# The vt100 description does not mention "dl". *sigh*
+termcapinfo vt100 dl=5\E[M
+
 # Set terminal
-#term rxvt-unicode-256color
-#term st-256color
 term screen-256color
 
 # Get IP Address
 backtick 101 600 600 hostname -I
+
 # Get volume level
 backtick 102 1 1 bash /usr/share/i3blocks/volume
+
 # Get battery status
 #backtick 103 1 1 bash /path/to/battery/script
-
-# Disable startup message
-startup_message off
 
 # Set status bar
 hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= dG}[ %{d}%H %{b}| %{G}%101`%{d}%{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{d} Vol: %102` %{b}| %{d}%103`%{d}%D %M-%d %{d}%{b}| %{W}%C%a %{g}]'
+
+# Set the hardstatus prop on gui terms to set the titlebar/icon title
+termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+
+# set these terminals up to be 'optimal' instead of vt100
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+#
+# Enable non-blocking mode to better cope with flaky ssh connections.
+defnonblock 5
 
 # Clear screen after exiting vim
 altscreen on
@@ -27,6 +58,10 @@ mousetrack on
 
 # Set bar color for splits
 rendition so wk
+
+# ------------------------------------------------------------------------------
+# STARTUP SCREENS
+# ------------------------------------------------------------------------------
 
 # Caption text. Highlight current window's status on split.
 caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
