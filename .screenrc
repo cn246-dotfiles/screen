@@ -10,6 +10,7 @@ deflogin on
 #autodetach off
 
 # turn visual bell on
+#vbell off
 vbell on
 vbell_msg "   Wuff  ----  Wuff!!  "
 
@@ -19,7 +20,6 @@ defscrollback 1024
 # ------------------------------------------------------------------------------
 # TERMINAL SETTINGS
 # ------------------------------------------------------------------------------
-
 # The vt100 description does not mention "dl". *sigh*
 termcapinfo vt100 dl=5\E[M
 
@@ -62,27 +62,25 @@ rendition so wk
 # ------------------------------------------------------------------------------
 # STARTUP SCREENS
 # ------------------------------------------------------------------------------
-
 # Caption text. Highlight current window's status on split.
 caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
 
 # Open default programs
-screen -t "IRC"     0 ssh irc
+screen -t "IRC"     0 bash
 screen -t "BASH"    1 bash
 screen -t "BASH"    2 bash
-screen -t "DDS"     3 bash
-screen -t "DDS"     4 bash
+screen -t "BASH"    3 bash
+screen -t "BASH"    4 bash
 
 # Shell window group
-screen -t "NEWS"    7 newsboat
 screen -t "DEV"     8 //group
 select 8
-screen -t "GIT"     10 bash
-screen -t "VIM"     11 bash
+screen -t "BASH"    10 bash
+screen -t "BASH"    11 bash
 screen -t "BASH"    12 bash
 screen -t "BASH"    13 bash
 screen -t "BASH"    14 bash
-screen -t "PYTHON"  15 python3
+screen -t "BASH"    15 bash
 select 0
 
 # Monitoring window group
@@ -90,6 +88,10 @@ screen -t "MON"     9 //group
 select 9
 screen -t "HTOP"    20 htop
 screen -t "DMESG"   21 bash
+screen -t "JRN"     22 bash
+screen -t "LOGS"    23 bash
+screen -t "LOGS"    24 bash
+screen -t "LOGS"    25 bash
 
 # Default to window 1
 select 1
