@@ -38,7 +38,9 @@ backtick 102 1 1 bash /usr/share/i3blocks/volume
 # Set status bar
 hardstatus off
 hardstatus alwayslastline
-hardstatus string '%{= dG}[ %{d}%H %{b}| %{G}%101`%{d}%{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{d} Vol: %102` %{b}| %{d}%103`%{d}%D %M-%d %{d}%{b}| %{W}%C%a %{g}]'
+hardstatus string '%{= dG}[ %{d}%H %{b}| %{G}%101`%{d}%{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{d}%103`%{d}%D %M-%d %{d}%{b}| %{W}%C%a %{g}]'
+# With volume
+#hardstatus string '%{= dG}[ %{d}%H %{b}| %{G}%101`%{d}%{g}][%= %{= dw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{d} Vol: %102` %{b}| %{d}%103`%{d}%D %M-%d %{d}%{b}| %{W}%C%a %{g}]'
 
 # Set the hardstatus prop on gui terms to set the titlebar/icon title
 termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
