@@ -68,7 +68,7 @@ rendition so wk
 caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
 
 # Open default programs
-screen -t "IRC"     0 bash
+screen -t "BASH"     0 bash
 screen -t "BASH"    1 bash
 screen -t "BASH"    2 bash
 screen -t "BASH"    3 bash
