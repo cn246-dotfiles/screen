@@ -30,7 +30,7 @@ term screen-256color
 backtick 101 600 600 hostname -I
 
 # Get volume level
-backtick 102 1 1 bash /usr/share/i3blocks/volume
+#backtick 102 1 1 bash /usr/share/i3blocks/volume
 
 # Get battery status
 #backtick 103 1 1 bash /path/to/battery/script
@@ -68,32 +68,32 @@ rendition so wk
 caption string '%?%F%{.K.}%?%3n %t%? [%h]%?'
 
 # Open default programs
-screen -t "BASH"     0 bash
+screen -t "BASH"    0 IRC
 screen -t "BASH"    1 bash
 screen -t "BASH"    2 bash
-screen -t "BASH"    3 bash
-screen -t "BASH"    4 bash
+screen -t "BASH"    3 CAL
+screen -t "BASH"    4 MAIL
 
 # Shell window group
-screen -t "DEV"     8 //group
-select 8
-screen -t "BASH"    10 bash
-screen -t "BASH"    11 bash
-screen -t "BASH"    12 bash
-screen -t "BASH"    13 bash
-screen -t "BASH"    14 bash
-screen -t "BASH"    15 bash
-select 0
+#screen -t "DEV"     8 //group
+#select 8
+#screen -t "BASH"    10 bash
+#screen -t "BASH"    11 bash
+#screen -t "BASH"    12 bash
+#screen -t "BASH"    13 bash
+#screen -t "BASH"    14 bash
+#screen -t "BASH"    15 bash
+#select 0
 
 # Monitoring window group
-screen -t "MON"     9 //group
-select 9
-screen -t "HTOP"    20 htop
-screen -t "DMESG"   21 bash
-screen -t "JRN"     22 bash
-screen -t "LOGS"    23 bash
-screen -t "LOGS"    24 bash
-screen -t "LOGS"    25 bash
+#screen -t "MON"     9 //group
+#select 9
+#screen -t "HTOP"    20 htop
+#screen -t "DMESG"   21 bash
+#screen -t "JRN"     22 bash
+#screen -t "LOGS"    23 bash
+#screen -t "LOGS"    24 bash
+#screen -t "LOGS"    25 bash
 
 # Default to window 1
 select 1
